@@ -10,5 +10,20 @@ jobs:
       - name: Checkout 
         uses: actions/checkout@v2
 
-      - name: Execute Tests
-        uses: docker://fedora:29:latest
+      - name: Build Docker image
+        run: docker build -t web-tests .
+        
+      - name: Run Robot Framework tests
+        run: docker run --rm web-tests
+
+      - name: Run Robot Framework tests
+        run: docker run --rm web-tests -x results.xml
+      
+      - name: Save results as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: robot-results
+          path: results.xml
+      
+      
+
