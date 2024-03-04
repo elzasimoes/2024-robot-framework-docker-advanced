@@ -27,3 +27,10 @@ docker run --rm -v C:\Users\Acer\Desktop\2024-robot-framework-docker-advanced\te
 ```
 
 - rm: remove a execução após a execução
+
+# Visualizar os containers rodando no docker
+
+```bash
+docker ps
+```
+

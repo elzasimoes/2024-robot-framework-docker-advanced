@@ -1,0 +1,14 @@
+name: Testes Robot Framework
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
+
+      - name: Execute Tests
+        uses: docker://fedora:29:latest
